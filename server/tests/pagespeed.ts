@@ -1,4 +1,4 @@
-import getPageSpeedInsights from "@server/services/external-apis/pagespeed-client";
+import getPageSpeedInsights from "@server/services/api-clients/pagespeed-client";
 
 if (import.meta.main) {
     const domain = "https://jacksonswinebar.co.uk";

@@ -6,6 +6,6 @@ export default async function executeInsights(domain: string) {
 }
 
 if (import.meta.main) {
-    const response = await executeInsights("https://jacksonswinebar.co.uk");
+    const response = await executeInsights("https://solve.co.uk");
     console.log(response);
 }

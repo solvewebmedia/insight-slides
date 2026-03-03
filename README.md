@@ -1,21 +1,15 @@
-# bun-react-tailwind-shadcn-template
-
-To install dependencies:
-
-```bash
-bun install
-```
-
-To start a development server:
-
-```bash
-bun dev
-```
-
-To run for production:
-
-```bash
-bun start
-```
-
-This project was created using `bun init` in bun v1.3.9. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+HTTP Request
+    ↓
+handlers.ts (validates, creates audit record)
+    ↓
+services/audit/index.ts (orchestrator: enqueues tasks to Redis)
+    ↓
+Redis Queue
+    ↓
+workers/audit-queue-processor.ts (pulls jobs from queue, routes to correct task)
+    ↓
+workers/tasks/pagespeed-task.ts (executes the task)
+    ↓
+calls → services/audit/pagespeed.ts (business logic)
+    ↓
+calls → services/external-apis/pagespeed-client.ts (talks to Google API)
